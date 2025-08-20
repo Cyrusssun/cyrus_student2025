@@ -42,6 +42,11 @@ Hi! My name is Cyrus Sunnnnn
             Turtle
         </div>
     </a>
+    <a href="{{site.baseurl}}/turtle" style="text-decoration: none;">
+        <div style="background-color:rgb(64, 39, 230); color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
+            trashcan
+        </div>
+    </a>
 </div>
 
 <br>
