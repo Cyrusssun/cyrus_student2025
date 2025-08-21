@@ -19,7 +19,7 @@ permalink: /about/
     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Flag_of_the_United_States_%28DoS_ECA_Color_Standard%29.svg" alt="USA Flag" class="slide-img">
     <div class="text">
       <p>USA</p>
-      <p>2019 - Present</p>
+      <p>2025 - Present</p>
     </div>
   </div>
 
@@ -27,7 +27,7 @@ permalink: /about/
     <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/Flag_of_California.svg" alt="CA Flag" class="slide-img">
     <div class="text">
       <p>California</p>
-      <p>2019 - Present</p>
+      <p>2025 - Present</p>
     </div>
   </div>
 
@@ -35,14 +35,14 @@ permalink: /about/
     <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Flag_of_the_People%27s_Republic_of_China.svg" alt="China Flag" class="slide-img">
     <div class="text">
       <p>China</p>
-      <p>2007 - 2019</p>
+      <p>2009 - 2025</p>
     </div>
   </div>
 
   <div class="mySlides">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Norway.svg" alt="Norway Flag" class="slide-img">
+    <img src="https://i.ibb.co/mrqZbhc2/download.png" alt="Korea Flag" class="slide-img">
     <div class="text">
-      <p>Norway</p>
+      <p>Korea</p>
       <p>Dream</p>
     </div>
   </div>
@@ -171,9 +171,9 @@ permalink: /about/
   <!-- About Me Section -->
   <section class="about-me" style="display: flex; align-items: center; margin-bottom: 30px;">
     <div style="flex: 2;">
-      <h2 style="font-size: 28px; color: #f0f0f0;">Hey, I'm Jason!</h2>
+      <h2 style="font-size: 28px; color: #f0f0f0;">Hey, I'm Cyrus!</h2>
       <p style="font-size: 18px; margin-top: 10px;">
-        My name is Borui Guan, but I go by Jason. I’m currently a Junior at Del Norte High School. I hope and I will fight for getting all A's in trimester 1.
+        My name is Qihong Sun, but I go by Cyrus. I’m currently a Junior at Del Norte High School. I hope that I can get all A's in trimester 1.
       </p>
     </div>
     <div style="flex: 1; text-align: center;">
@@ -185,11 +185,11 @@ permalink: /about/
   <section class="schedule" style="margin-bottom: 30px;">
     <h3 style="font-size: 24px; color: #88bc4c;">My Current Schedule</h3>
     <ul style="font-size: 18px; margin-top: 10px; list-style-type: none;">
-      <li>AP Calculus AB</li>
-      <li>AP Environmental Science</li>
-      <li>AP Computer Science A</li>
-      <li>American Literature</li>
-      <li>Offroll</li>
+      <li>AP Calculus BC</li>
+      <li>High School English</li>
+      <li>ELD English</li>
+      <li>AP Computer Science Principle</li>
+      <li>US History</li>
     </ul>
   </section>
 
@@ -197,7 +197,7 @@ permalink: /about/
   <section class="goals" style="margin-bottom: 30px;">
     <h3 style="font-size: 24px; color: #88bc4c;">Academic Goals</h3>
     <p style="font-size: 18px;">
-      I’m striving to get A’s in all my AP classes to boost my GPA and prepare for college. It's a tough road, but I’m up for the challenge!
+      I'm trying to get A's in all my AP class, in order to improve my GPA and prepare college. 
     </p>
   </section>
 
@@ -205,28 +205,27 @@ permalink: /about/
   <section class="fun-facts" style="margin-bottom: 30px;">
     <h3 style="font-size: 24px; color: #88bc4c;">Fun Facts About Me</h3>
     <ul style="font-size: 18px; margin-top: 10px; list-style-type: none;">
-      <li>I can play the flute and have been part of the concert band for 4 years.</li>
-      <li>I moved here 4 years ago but don’t have an accent. (sometimes though)</li>
-      <li>I have a collection of Funko Pops. Check it out below!</li>
+      <li>I moved here for only 3 months ago.</li>
+      <li>I love basketball, I play basketball eveyday back in China</li>
     </ul>
     <div class="slideshow-container">
     <div class="mySlides">
-        <img src="https://i.ibb.co/TMkfZ5g/image.png" alt="Pop Funkos #1" class="slide-img">
+        <img src="https://i.ibb.co/zHW2H717/image.png" alt="Basketball" class="slide-img">
         <div class="text">
         </div>
     </div>
     <div class="mySlides">
-        <img src="https://i.ibb.co/qrJP7c6/image.png" alt="Pop Funkos #2" class="slide-img">
+        <img src="https://i.ibb.co/FGMsXX9/image.png" alt="Kobe Bryant" class="slide-img">
         <div class="text">
         </div>
     </div>
     <div class="mySlides">
-        <img src="https://i.ibb.co/QQKq6jH/image.png" alt="Pop Funkos #3" class="slide-img">
+        <img src="https://i.ibb.co/8LpgrPGF/image.png" alt="Snowboarding" class="slide-img">
         <div class="text">
         </div>
     </div>
     <div class="mySlides">
-        <img src="https://i.ibb.co/85YWnT9/image.png" alt="Pop Funkos #4" class="slide-img">
+        <img src="https://i.ibb.co/nMwRPNJf/image.png" alt="Skiing" class="slide-img">
         <div class="text">
         </div>
     </div>
@@ -350,14 +349,14 @@ permalink: /about/
 <section class="quiz" style="margin-top: 50px; padding: 20px; background-color: #1a1a1a; border-radius: 15px;">
   <h2 class="quiz-title">Quick Quiz</h2>
   <form id="quizForm" class="quiz-form">
-    <p class="quiz-question">1. Where did I live from 2007 to 2019?</p>
+    <p class="quiz-question">1. Where did I live from 2025 to present?</p>
     <label><input type="radio" name="q1" value="USA"> USA</label><br>
     <label><input type="radio" name="q1" value="China"> China</label><br>
-    <label><input type="radio" name="q1" value="Norway"> Norway</label><br><br>
+    <label><input type="radio" name="q1" value="Norway"> Korea</label><br><br>
     <p class="quiz-question">2. Where do I dream of living?</p>
     <label><input type="radio" name="q2" value="USA"> USA</label><br>
     <label><input type="radio" name="q2" value="China"> China</label><br>
-    <label><input type="radio" name="q2" value="Norway"> Norway</label><br><br>
+    <label><input type="radio" name="q2" value="Norway"> Korea</label><br><br>
     <button type="button" class="quiz-button" onclick="checkQuiz()">Submit</button>
   </form>
 
