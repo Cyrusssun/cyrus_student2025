@@ -494,3 +494,110 @@ permalink: /about/
     document.getElementById("result").textContent = "You scored " + score + " out of 2. :))";
   }
 </script>
+
+
+<!-- Optional: Add a web manifest for PWA support -->
+<!-- <link rel="manifest" href="/site.webmanifest"> -->
+</head>
+<body><head>
+    <title>Site Title</title>
+
+    <style>
+        .dropdown {
+            display: inline-block;
+            position: relative;
+            z-index: 9999;
+            /* Ensures it's above other elements */
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 140px;
+            /* Adjusted width */
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 10000;
+            /* Higher z-index ensures it's on top */
+            text-align: left;
+            /* Align text to the left */
+            margin-top: -10px;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 4px 6px;
+            /* Reduced padding */
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+            /* Smaller font size */
+            height: 70px;
+            margin-top: -10px;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropdown-button {
+            text-decoration: underline;
+        }
+
+        .dropdown-button {
+            background-color: transparent;
+            border: none;
+            /* Ensure no border */
+            cursor: pointer;
+            font-size: inherit;
+            color: inherit;
+            outline: none;
+            /* Remove focus outline */
+        }
+
+        .dropdown-button:focus {
+            outline: none;
+            /* Remove outline when focused */
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 4px 6px;
+            /* Reduced padding */
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+            /* Smaller font size */
+            height: 70px;
+            margin-top: -10px;
+            border: none;
+            /* Ensure no borders on the links */
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+            outline: none;
+            /* Remove any outline */
+        }
+
+        @media screen and (max-width: fit-content) {
+            .site-title {
+                padding-right: 45px;
+            }
+        }
+
+        .site-header .wrapper {
+            display: flex;
+            align-items: center;
+            max-width: fit-content !important;
+        }
+
+        .site-header .wrapper .site-title img {
+            display: inline-block;
+            margin-right: 16px;
+        }
+    </style>
