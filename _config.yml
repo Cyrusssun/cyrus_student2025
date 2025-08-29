@@ -1,20 +1,18 @@
-title: Open Coding 
+title: Cyrus Sun 
 description: "Class of 2026"
 owner_name: Cyrus Sun
 github_username: cyrusun-0505
 github_repo: "cyrus_student2025" 
 baseurl: "/cyrus_student2025" 
 future: true
-remote_theme: jekyll/minima
-minima:
-  skin: dark
-  social_links:
+remote_theme: pages-themes/cayman@v0.2.0
+
+social_links:
     - { platform: github, user_url: "https://github.com/open-coding-society" }
     - { platform: x, user_url: "https://x.com/Open_Coding" }
     - { platform: youtube, user_url: "https://www.youtube.com/@OpenCodingSociety" } 
 plugins:
   - jekyll-remote-theme
-  - jekyll-include-cache
 header_pages:
   - navigation/blog.md
   - navigation/search.md
