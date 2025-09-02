@@ -177,7 +177,7 @@ permalink: /about/
       </p>
     </div>
     <div style="flex: 1; text-align: center;">
-      <img src="https://i.ibb.co/2kGXKP7/2024-08-25-173425.png" alt="My picture" width="150" style="border-radius: 50%; box-shadow: 0 4px 8px rgba(0,0,0,0.6);">
+      <img src="https://ibb.co/N2FFd840" alt="My picture" width="150" style="border-radius: 50%; box-shadow: 0 4px 8px rgba(0,0,0,0.6);">
     </div>
   </section>
 
