@@ -5,7 +5,7 @@ github_username: cyrusun-0505
 github_repo: "cyrus_student2025" 
 baseurl: "/cyrus_student2025" 
 future: true
-remote_theme: pages-themes/cayman@v0.2.0
+remote_theme: jekyll/minima
 
 social_links:
     - { platform: github, user_url: "https://github.com/open-coding-society" }
