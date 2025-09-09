@@ -18,3 +18,5 @@ header_pages:
   - navigation/search.md
   - navigation/about.md
   - navigation/logintoolkit.md
+url: "http://127.0.0.1:4600" # 你的本地服务器地址
+baseurl: "/cyrus_student2025" # 日志中显示的子路径
