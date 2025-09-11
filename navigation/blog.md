@@ -9,7 +9,7 @@ toc: true
 
 
 
-# VS Code Setup Summary
+# **VS Code Setup Summary**
 
 ## 1. Installation & Configuration
 Downloaded VS Code from https://code.visualstudio.com/ and added essential PATH integrations. Enabled context menu options for easy folder access.
