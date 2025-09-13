@@ -47,6 +47,11 @@ Hi! My name is Cyrus Sunnnnn
             trashcan
         </div>
     </a>
+    <a href="{{site.baseurl}}/Snakegame-promax" style="text-decoration: none;">
+    <div style="background-color: #FFA500; color: black; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
+        Snake Game promax!!!
+    </div>
+</a>
 </div>
 
 <br>

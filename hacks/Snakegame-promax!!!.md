@@ -1,11 +1,11 @@
 ---
-layout: post
+layout: base
 categories: [Hacks]
-title: snakegame
-description:  snakegame
+title: Snakegame-promax
+description:  Snakegame-promax
 type: issues 
 comments: true
-permalink: /snakegame
+permalink: /Snakegame-promax
 hide: true
 ---
 
