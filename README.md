@@ -1,263 +1,208 @@
-# Introduction
+# README
 
-Open Coding Society `student` is a project designed to allow students to build their customized blog to support Computer Science or other education. This repository offers a wide range of resources that are taught in conjunction with the Open Coding Society 'pages' repository.
+> This is a project to support AP Computer Science Principles (APCSP) as well as a UC articulated Data Structures course. It was crafted iteratively starting in 2020 to the present time.  The primary purposes are ...
 
-This GitHub Pages repository can be customized by the blogger to support computer science learning as the student works through the pathways of using JavaScript, Python/Flask, Java/Spring.
+- Used as starter code for student projects for `AP CSP 1 and 2` and `Data Structures 1` curriculum.
+- Used to teach key principles in learning the Python Flask programming environment.
+- Used as a backend server to service API's in a frontend-to-backend pipeline. Review the `api` folder in the project for endpoints.
+- Contains a minimal frontend, mostly to support Administrative functionality using the `templates` folder and `Jinja2` to define UIs.
+- Contains SQL database code in the `model` folder to introduce concepts of persistent data and storage.  Perisistence folder is `instance/volumes` for generated SQLite3 db.
+- Contains capabilities for deployment and has been used with AWS, Ubuntu, Docker, docker-compose, and Nginx to `deploy a WSGI server`.
+- Contains APIs to support `user authentication and cookies`, a great deal of which was contributed by Aiden Wu a former student in CSP.  
 
-## Student Requirements
+## Flask Portfolio Starter
 
-HS students will have the opportunity to create their personal GitHub Pages repository as the progress through their coursework.
+Use this project to create a Flask Server.
 
-In general, Students and Instructors are expected to use GitHub Pages to build lessons, complete classroom hacks/challenges and perform exploritory work. This project also offers some JavaScript games and can serve as a frontend to multiple full-stack applications.
+- GitHub link: [flask](https://github.com/open-coding-society/flask), runtime link is published under the About on this same page.
+- `Use this as template` option is availble if you plan on making your instance of the repository.
+- `Fork` the repository if you plan to contribute though GitHub PRs.
 
-Exchange of information from this repository to you personal GitHub Pages can be done in many ways...
+## The conventional way to get started
 
-1. student is indtend to use this repository as a template
-2. sharing or obtaining a file, ie, `wget "raw-link.ipynb" from GitHub
-2. drag and dropping a file between two opened vscode projects
-4. etc.
+> Quick steps that can be used with MacOS, WSL Ubuntu, or Ubuntu; this uses Python 3.9 or later as a prerequisite.
 
----
-
-## History
-
-This project is in its 4th revision (aka 4.0).
-
-The project was initially based on a project called Fastpages. But this project has diverged from those roots into an independent entity, in fact most things (like the build system), are completely different.  The decision to separate from Fastpages was influenced by it's deprecation by the authors.  It is believed by our community that the authors of Fastpages turned toward the support of Quatro.  After that change of direction Fastpages did not align with the Instructors's goals. Thus, Open Coding Society 'Pages' has more of a raw development and classroom blogging purpose.  But, we are greatful to Fastpages for their inspiration.
-
-### License
-
-The Apache license has its roots in Fastpages.  Thus, it carries that license forward.  However, most of the code is likely unrecognizable from those original roots.
-
-### Key Features
-
-- **Foundation Blogs**: In the GitHub.io student runtime, there are articles that can be obtained through the blog or search links.
-- **Code Examples**: Provides practical coding examples in JavaScript, including a few games, samples for index and about pages.
-- **Tools and Integrations**: Features GitHub actions for blog publishing, Utterances for blog commenting, local development support via Makefile and scripts, and styling with the Minima Theme and SASS.
-
-### Contributions
-
-- **Notable Contributions**: Highlights significant contributions to the project, including theme development, search and tagging functionality, GitHub API integration, and the incorporation of GitHub Projects into GitHub pages. Contributors such as Tirth Thakker, Mirza Beg, and Toby Ledder have played crucial roles in these developments.
-
-- **Blog Contributions**:  Often students contribute articles and blogs to this project.  Their names are typically listed in the front matter of their contributing post.
-
----
-
-## GitHub Pages setup
-
-The absolutes in setup up...
-
-**Activate GitHub Pages Actions**: This step involves enabling GitHub Pages Actions for your project. By doing so, your project will be automatically deployed using GitHub Pages Actions, ensuring that your project is always up to date with the latest changes you push to your repository.
-
-- On the GitHub website for the repository go to the menu: Settings -> Pages ->Build
-- Under the Deployment location on the page, select "GitHub Actions".
-
-**Update `_config.yml`**: You need to modify the `_config.yml` file to reflect your repository's name. This configuration is crucial because it ensures that your project's styling is correctly applied, making your deployed site look as intended rather than unstyled or broken.
-
-```text
-github_repo: "student" 
-baseurl: "/student"
-```
-
-**Set Repository Name in Makefile**: Adjust the `REPO_NAME` variable in your Makefile to match your GitHub repository's name. This action facilitates the automatic updating of posts and notebooks on your local development server, improving the development process.
-
-```make
-# Configuration, override port with usage: make PORT=4200
-PORT ?= 4600
-REPO_NAME ?= student
-LOG_FILE = /tmp/jekyll$(PORT).log
-```
-
-### Tool requirements
-
-All `GitHub Pages` websites are managed on GitHub infrastructure and use GitHub version control.  Each time we change files in GitHub it initiates a GitHub Action, a continuous integration and development toolset, that rebuilds and publishes the site with Jekyll.  
-
-- GitHub uses `Jekyll` to transform your markdown and HTML content into static websites and blogs. [Jekyll](https://jekyllrb.com/).
-- A Linux shell is required to work with this project integration with GitHub Pages, GitHub and VSCode.  Ubuntu is the preferred shell, though MacOS shell is supported as well.  There will be some key setup scripts that follow in the README.
-- Visual Studio Code is the author's preferred code editor and extensible development environment.  VSCode has a rich ecosystem of developer extensions that ease working with GitHub Pages, GitHub, and many programming languages.  Setting up VSCode and extensions will be elaborated upon in this document.
-- An anatomy section in this README will describe GitHub Pages and conventions that are used to organize content and files.  This includes file names, key coding files, metadata tagging of blogs, styling tooling for blogs, etc.
-
-### Development Environment Setup
-
-Comprehensive start. A topic-by-topic guide to getting this project running is published [here](https://pages.opencodingsociety.com/tools/).
-
-Quick start.  A quick start below is a reminder, but is dependent on your knowledge.  Only follow this instruction if you need a refresher.  Always default to the comprehensive start if any problem occurs.
-
-#### Clone Repo
-
-Run these commands to obtain the project, then locate into the project directory with the terminal, install an extensive set of tools, and make.
+- Open a Terminal, clone a project and `cd` into the project directory.  Use a `different link` and name for `name` for clone to match your repo.
 
 ```bash
-git clone <this-repo> # git clone https://github.com/open-coding-society/student.git 
-cd <repo-dir>/scripts # cd student 
+mkdir -p ~/openccs; cd ~/opencs
+
+git clone https://github.com/open-coding-ocietyflask.git
+
+cd flask
 ```
 
-#### Windows WSL and/or Ubuntu Users
-
-- Execute the script: `./activate_ubuntu.sh`
-
-#### macOS Users
-
-- Execute the script: `./activate_macos.sh`
-
-#### Kasm Cloud Desktop Users
-
-- Execute the script: `./activate_github.sh`
-
-## Run Server on localhost
-
-To preview the project you will need to "make" the project.
-
-### bundle install
-
-The very first time you clone run project you will need to run this Ruby command as the final part of your setup.
+- Install python dependencies for Flask, etc.
 
 ```bash
-./scripts/venv.sh
+python -m venv venv
 source venv/bin/activate
-bundle install
+pip install -r requirements.txt
 ```
 
-### Start the Server  
+### Open project in VSCode
 
-This requires running terminal commands `make`, `make stop`, `make clean`, or `make convert` to manage the running server.  Logging of details will appear in the terminal.   A `Makefile` has been created in the project to support commands and start processes.
-
-Start the server, this is the best choice for initial and iterative development.  Note. after the initial `make`, you should see files automatically refresh in the terminal on VSCode save.
-
-  ```bash
-  make
-  ```
-
-### Load web application into the Browser
-
-Start the preview server in the terminal,
-The terminal output from `make` shows the server address. "Cmd" or "Ctl" click the http location to open the preview server in a browser. Here is an example Server address message, click on the Server address to load:...
-
-  ```text
-  http://0.0.0.0:4600/pages/
-  ```
-
-### Regeneration of web application
-
-Save on ".ipynb" or ".md" file activiates "regeneration". An example terminal message is below.  Refresh the browser to see updates after the message displays.
-
-  ```text
-  Regenerating: 1 file(s) changed at 2023-07-31 06:54:32
-      _notebooks/2024-01-04-cockpit-setup.ipynb
-  ```
-
-### Other "make" commands
-
-Terminal messages are generated from background processes.  At any time, click return or enter in a terminal window to obtain a prompt.  Once you have the prompt you can use the terminal as needed for other tasks.  Always return to the root of project `cd ~/open/pages` for all "make" actions.
-
-#### Stop the preview server
-
-Stopping the server ends the web server applications running process.  However, it leaves constructed files in the project in a ready state for the next time you run `make`.
+- Prepare VSCode and run
+  - From Terminal run VSCode
 
   ```bash
-  make stop
+  code .
   ```
 
-### Clean the local web application environment
+  - Open Setting: Ctrl-Shift P or Cmd-Shift
+    - Search Python: Select Interpreter.
+    - Match interpreter to `which python` from terminal.
+    - Shourd be ./venv/bin/python
 
-This command will top the server and "clean" all previously constructed files (ie .ipynb -> .md). This is the best choice when renaming files has created duplicates that are visible when previewing work.
+  - From Extensions Marketplace install `SQLite3 Editor`
+    - Open and view SQL database file `instance/volumes/user_management.db`
 
+  - Make a local `.env` file in root of project to contain your secret passwords
+
+  ```shell
+  # Port configuration
+  FLASK_PORT=8001
+  # Admin user reset password 
+  DEFAULT_PASSWORD='123Qwerty!'
+  # Admin user defaults
+  ADMIN_USER='Thomas Edison'
+  ADMIN_UID='toby'
+  ADMIN_PASSWORD='123Toby!'
+  ADMIN_PFP='toby.png'
+  # Create a default user for the system
+  DEFAULT_USER='Grace Hopper'
+  DEFAULT_UID='hop'
+  DEFAULT_USER_PASSWORD='123Hop!'
+  DEFAULT_USER_PFP='hop.png'
+  # Obtain key, [Google AI Studio](https://aistudio.google.com/api-keys)
+  GEMINI_API_KEY=xxxxx
+  GEMINI_SERVER=https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent
+  # GitHub Configuation
+  GITHUB_TOKEN=ghp_xxx
+  GITHUB_TARGET_TYPE=user  # Use 'organization' or 'user'
+  GITHUB_TARGET_NAME=Open-Coding-Society
+  # KASM Configuration (server is defaulted)
+  KASM_SERVER=https://kasm.opencodingsociety.com
+  KASM_API_KEY_SECRET=xxxx
+  KASM_API_KEY=xxx
+  # DB Configuration, AWS RDS
+  DB_USERNAME='admin'
+  DB_PASSWORD='xxxxx'
+  ```
+
+  - Make the database and init data.
+  
   ```bash
-  make clean
+  ./scripts/db_init.py
   ```
 
-### Observe build errors
+  - Explore newly created SQL database
+    - Navigate too instance/volumes
+    - View/open `user_management.db`
+    - Loook at `users` table in viewer
 
-Test Jupyter Notebook conversions (ie .ipynb -> .md), this is the best choice to see if an IPYNB conversion error is occurring.
+  - Run the Project
+    - Select/open `main.py` in VSCode
+    - Start with Play button
+      - Play button sub option contains Debug
+    - Click on localhost:8087 in terminal to launch
+      - Output window will contain page to launch http://localhost:8587
+    - Login using your secrets from env
 
-  ```bash
-  make convert
-  ```
+  - Basic API test
+    - [Jokes](http://localhost:8587/api/jokes/)
 
----
+### User Operations
+| Purpose | Correct Endpoint | What It Does |
+|---------|-----------------|--------------|
+| **Login** | `/api/authenticate` | Authenticates user & sets cookie |
+| **Get User** | `/api/id` | Gets current logged-in user |
+| **Signup** | `/api/user` | Creates new user account |
+| **Posts** | `/api/post/all` | Gets all social media posts |
+| **Create Post** | `/api/post` | Creates a new post |
+| **Gemini AI** | `/api/gemini` | Chat with AI assistant |
 
-## Development Support
+### MicroBlog Operations
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/microblog` | Create new post |
+| GET | `/api/microblog` | Get posts (with filters) |
+| PUT | `/api/microblog` | Update post |
+| DELETE | `/api/microblog` | Delete post |
 
-### File Names in "_posts", "_notebooks"
+**Query Parameters for GET:**
+- `?topicId=1` - Posts for specific topic
+- `?userId=123` - Posts by specific user  
+- `?search=flask` - Search content
+- `?limit=20` - Limit results
 
-There are two primary directories for creating blogs.  The "_posts" directory is for authoring in markdown only.  The "_notebooks" allows for markdown, pythons, javascript and more.
+### MicroBlog Interactions
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/microblog/reply` | Add reply to post |
+| POST | `/api/microblog/reaction` | Add reaction (👍, ❤️, etc.) |
+| DELETE | `/api/microblog/reaction` | Remove reaction |
 
-To name a file, use the following structure (If dates are in the future, review your config.yml setting if you want them to be viewed).  Review these naming conventions.
+### Microblog Page Integration
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/microblog/page/<page_key>` | Get posts for specific page |
+| POST | `/api/microblog/topics/auto-create` | Auto-create topic for page |
+| GET | `/api/microblog/topics?pagePath=X` | Get topic by page path |
 
-- For markdown files in _posts:
-  - year-month-day-fileName.md
-    - GOOD EXAMPLE: 2021-08-02-First-Day.md
-    - BAD EXAMPLE: 2021-8-2-first-day.md
-    - BAD EXAMPLE: first-day.md
-    - BAD EXAMPLE: 2069-12-31-First-Day.md
+## Idea
 
-- For Jupyter notebooks in _notebooks:
-  - year-month-day-fileName.ipynb
-    - GOOD EXAMPLE: 2021-08-02-First-Day.ipynb
-    - BAD EXAMPLE: 2021-8-2-first-day.ipynb
-    - BAD EXAMPLE: first-day.ipynb
-    - BAD EXAMPLE: 2069-12-31-First-Day.ipynb
+### Files and Directories in this Project
 
-### Tags
+The key files and directories in this project are in these online articles.
 
-Tags are used to organize pages by their tag the way to add tags is to add the following to your front matter such as the example seen here `categories: [Tools]` Each item in the same category will be lumped together to be seen easily on the search page.
+[Python/Flask](https://pages.opencodingsociety.com/python/flask)
 
-### Search
+[Legacy - Flask Intro](https://pages.opencodingsociety.com/flask-overview)
 
-All pages can be searched for using the built-in search bar. This search bar will search for any word in the title of a page or in the page itself. This allows for easily finding pages and information that you are looking for. However, sometimes this may not be desirable so to hide a page from the search you need to add `search_exclude: true` to the front matter of the page. This will hide the page from appearing when the viewer uses search.
+### Implementation Summary
 
-### Navigation Bar
+#### Oct 2025
 
-To add pages to the top navigation bar use _config.yml to order and determine which menus you want and how to order them.  Review the_config.yml in this project for an example.
+> Updates for 2025-2026 school year.  Focus on documentation and API functionality.
 
-### Blog Page
+- Work to make documentation materials useful.
+- Add gemini API's
+- Add microblog API's, social medai support
 
-There is a blog page that has options for images and a description of the page. This page can help the viewer understand what the page is about and what they can expect to find on the page. The way to add images to a page is to have the following front matter `image: /images/file.jpg` and then the name of the image that you want to use. The image must be in the `images` folder. Furthermore, if you would like the file to not show up on the blog page `hide: true` can be added to the front matter.
+#### July 2024
 
-### SASS support
+> Updates for 2024 too 2025 school year.  Primary addition is a fully functional backend for JWT login system.
 
-Pages supports a variety of different themes that are each overlaid on top of minima. To use each theme, go to the "_sass/minima/custom-styles.scss" file and simply comment or uncomment the theme you want to use.
+- Full support for JWT cookies
+- The API's for CRUD methods
+- The model definition User Class and related tables
+- SQLite and RDS support
+- Minimal Server side UI in Jinja2
 
-To learn about the minima themes search for "GitHub Pages minima" and review the README.
+#### July 2023
 
-To find a new theme search for "GitHub Pages Themes".
+> Updates for 2023 to 2024 school year.
 
-### Includes
+- Update README with File Descriptions (anatomy)
+- Add JWT and add security features using a SQLite user database
+- Add migrate.sh to support sqlite schema and data upgrade
 
-- Pages uses liquid syntax to import many common page elements that are present throughout the repository. These common elements are imported from the _includes directory. If you want to add one of these common elements, use liquid syntax to import the desired element to your file. Here’s an example of the liquid syntax used to import: `{%- include post_list.html -%}` Note that the liquid syntax is surrounded by curly braces and percent signs. This can be used anywhere in the repository.
+#### January 2023
 
-### Layouts
+> This project focuses on being a Python backend server.  Intentions are to only have simple UIs an perhaps some Administrative UIs.
 
-- To use or create a custom page layout, make an HTML page inside the _layouts directory, and when you want to use that layout in a file, use the following front matter `layout: [your layout here]`.  All layouts will be written in liquid to define the structure of the page.
+#### September 2021
 
-### Metadata
+> Basic UI elements were implemented showing server side Flask with Jinja 2 capabilities.
 
-Metadata, also known as "front matter", is a set of key-value pairs that can provide additional information to GitHub Pages about .md and .ipynb files. This can and probably will be used in other file types (ie doc, pdf) if we add them to the system.
-
-In the front matter, you can also define things like a title and description for the page.  Additional front matter is defined to place content on the "Computer Science Lab Notebook" page.  The `courses:` key will place data on a specific page with the nested `week:` placing data on a specific row on the page.  The `type:` key in "front matter" will place the blog under the plans, hacks(ToDo), and tangibles columns.
-
-- In our files, the front matter is defined at the top of the page or the first markdown cell.
-
-  - First, open one of the .md or .ipynb files already included in either your _posts|_notebooks folder.
-
-  - In the .md file, you should notice something similar to this at the top of the page. To see this in your .ipynb files you will need to double-click the markdown cell at the top of the file.
-
-  ```yaml
-  ---
-  toc: true
-  comments: true
-  layout: post
-  title: Jupyter Python Sample
-  description: Example Blog!!!  This shows code and notes from hacks.
-  type: ccc
-  courses: { csa: {week: 5} }
-  ---
-  ```
-
-- The front matter will always have '---' at the top and bottom to distinguish it and each key-value pair will be separated by a ':'.
-
-- Here we can modify things like the title and description.
-
-- The type value will tell us which column this is going to appear under the time box supported pages.  The "ccc" stands for Code, Code, Code.
-
-- The courses will tell us which menu item it will be under, in this case, the `csa` menu, and the `week` tells it what row (week) it will appear under that menu.
+- The Project entry point is main.py, this enables the Flask Web App and provides the capability to render templates (HTML files)
+- The main.py is the  Web Server Gateway Interface, essentially it contains an HTTP route and HTML file relationship.  The Python code constructs WSGI relationships for index, kangaroos, walruses, and hawkers.
+- The project structure contains many directories and files.  The template directory (containing HTML files) and static directory (containing JS files) are common standards for HTML coding.  Static files can be pictures and videos, in this project they are mostly javascript backgrounds.
+- WSGI templates: index.html, kangaroos.html, ... are aligned with routes in main.py.
+- Other templates support WSGI templates.  The base.html template contains common Head, Style, Body, and Script definitions.  WSGI templates often "include" or "extend" these templates.  This is a way to reuse code.
+- The VANTA javascript statics (backgrounds) are shown and defaulted in base.html (birds) but are block-replaced as needed in other templates (solar, net, ...)
+- The Bootstrap Navbar code is in navbar.html. The base.html code includes navbar.html.  The WSGI html files extend base.html files.  This is a process of management and correlation to optimize code management.  For instance, if the menu changes discovery of navbar.html is easy, one change reflects on all WSGI html files.
+- Jinja2 variables usage is to isolate data and allow redefinitions of attributes in templates.  Observe "{% set variable = %}" syntax for definition and "{{ variable }}" for reference.
+- The base.html uses a combination of Bootstrap grid styling and custom CSS styling.  Grid styling in observation with the "<Col-3>" markers.  A Bootstrap Grid has a width of 12, thus four "Col-3" markers could fit on a Grid row.
+- A key purpose of this project is to embed links to other content.  The "href=" definition embeds hyperlinks into the rendered HTML.  The base.html file shows usage of "href={{github}}", the "{{github}}" is a Jinja2 variable.  Jinja2 variables are pre-processed by Python, a variable swap with value, before being sent to the browser.
