@@ -40,7 +40,10 @@ permalink: /risk_assessment_simple
     border-radius: 10px;
     background: #f0f4ff;
     border: 1px solid #ccc;
-    color: black;
+    color: black !important;
+  }
+  #result p, #result h3, #result span {
+    color: black !important;
   }
   .badge {
     display: inline-block;
