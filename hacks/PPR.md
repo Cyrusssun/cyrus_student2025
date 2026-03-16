@@ -45,6 +45,9 @@ permalink: /risk_assessment_simple
   #result p, #result h3, #result span {
     color: black !important;
   }
+  .box p, .box h2, .box b, .box label {
+    color: black !important;
+  }
   .badge {
     display: inline-block;
     padding: 8px 24px;
