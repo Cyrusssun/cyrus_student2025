@@ -1,3 +1,8 @@
+---
+layout: base
+title: Risk assessment simple
+permalink: /risk_assessment_simple
+---
 <style>
   .box {
     font-family: Arial, sans-serif;
