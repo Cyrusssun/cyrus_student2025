@@ -1,8 +1,7 @@
 ---
-layout: post
+layout: base
 title: API read
-permalink: /api/read
-show_reading_time: false
+permalink: /api/read/
 ---
 
 <h1>FE GET method access</h1>
