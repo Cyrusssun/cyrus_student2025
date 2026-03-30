@@ -122,7 +122,56 @@ permalink: /risk_assessment_simple
 </div>
 
 <script>
-  function showResult() {
+  const weights = [0.15, 0.10, 0.35, 0.30, 0.10];
+    function assessInvestmentRisk(answers,weights){
+
+      let score = 0;
+      for (let i = 0; i < answers.length; i++) {
+        score = score + answers[i] * weights[i];
+      }
+      score = Math.round(score);
+
+      let level  = "";
+      let type   = "";
+      let ret    = "";
+      let fluc   = "";
+      let advice = "";
+      let color  = "";
+
+      if (score < 20) {
+        level = "Low Risk";         type = "Conservative Investor";
+        ret   = "2% - 4% per year"; fluc = "+/- 3%";
+        advice = "80%+ bonds or savings."; color = "#16a34a";
+      } else if (score < 40) {
+        level = "Low-Medium Risk";  type = "Cautious Investor";
+        ret   = "4% - 6% per year"; fluc = "+/- 5%";
+        advice = "60% bonds, 30% blue-chip stocks, 10% cash."; color = "#65a30d";
+      } else if (score < 60) {
+        level = "Medium Risk";      type = "Balanced Investor";
+        ret   = "6% - 9% per year"; fluc = "+/- 8%";
+        advice = "40% bonds, 50% stocks, 10% other."; color = "#d97706";
+      } else if (score < 78) {
+        level = "Medium-High Risk"; type = "Growth Investor";
+        ret   = "9% - 12% per year"; fluc = "+/- 12%";
+        advice = "20% bonds, 70% growth stocks, 10% ETFs."; color = "#ea580c";
+      } else {
+        level = "High Risk";        type = "Aggressive Investor";
+        ret   = "12%+ per year";    fluc = "+/- 15% - 20%";
+        advice = "10% bonds, 80% growth stocks, 10% high-risk."; color = "#dc2626";
+      }
+      return{
+        score:score,
+        level:level,
+        type:type,
+        ret:ret,
+        fluc:fluc,
+        advice:advice,
+        color:color,
+      };
+    }
+  let testConservative = assessInvestmentRisk([20,20,10,10,10],weights);
+  let testAggresive = assessInvestmentRisk([80,90,90,90,80],weights);
+   function showResult() {
     let name = inputName.value;
     let goal = inputGoal.value;
 
@@ -161,50 +210,15 @@ permalink: /risk_assessment_simple
     }
 
     let answers = [a1, a2, a3, a4, a5];
-    let weights = [0.15, 0.10, 0.35, 0.30, 0.10];
-    let score = 0;
-    for (let i = 0; i < answers.length; i++) {
-      score = score + answers[i] * weights[i];
-    }
-    score = Math.round(score);
-
-    let level  = "";
-    let type   = "";
-    let ret    = "";
-    let fluc   = "";
-    let advice = "";
-    let color  = "";
-
-    if (score < 20) {
-      level = "Low Risk";         type = "Conservative Investor";
-      ret   = "2% - 4% per year"; fluc = "+/- 3%";
-      advice = "80%+ bonds or savings."; color = "#16a34a";
-    } else if (score < 40) {
-      level = "Low-Medium Risk";  type = "Cautious Investor";
-      ret   = "4% - 6% per year"; fluc = "+/- 5%";
-      advice = "60% bonds, 30% blue-chip stocks, 10% cash."; color = "#65a30d";
-    } else if (score < 60) {
-      level = "Medium Risk";      type = "Balanced Investor";
-      ret   = "6% - 9% per year"; fluc = "+/- 8%";
-      advice = "40% bonds, 50% stocks, 10% other."; color = "#d97706";
-    } else if (score < 78) {
-      level = "Medium-High Risk"; type = "Growth Investor";
-      ret   = "9% - 12% per year"; fluc = "+/- 12%";
-      advice = "20% bonds, 70% growth stocks, 10% ETFs."; color = "#ea580c";
-    } else {
-      level = "High Risk";        type = "Aggressive Investor";
-      ret   = "12%+ per year";    fluc = "+/- 15% - 20%";
-      advice = "10% bonds, 80% growth stocks, 10% high-risk."; color = "#dc2626";
-    }
-
+    let profile = assessInvestmentRisk(answers,weights);
     resTitle.innerHTML  = name + "'s Result";
-    resBadge.innerHTML  = level;
-    resBadge.style.backgroundColor = color;
-    resType.innerHTML   = type;
-    resReturn.innerHTML = ret;
-    resFluc.innerHTML   = fluc;
-    resAdvice.innerHTML = advice;
-    resGoal.innerHTML   = goal;
+    resBadge.innerHTML  = profile.level;
+    resBadge.style.backgroundColor = profile.color;
+    resType.innerHTML   = profile.type;
+    resReturn.innerHTML = profile.ret;
+    resFluc.innerHTML   = profile.fluc;
+    resAdvice.innerHTML = profile.advice;
+    resGoal.innerHTML   = profile.goal;
     result.style.display = "block";
-  }
+   }
 </script>
