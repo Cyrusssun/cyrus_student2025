@@ -218,7 +218,7 @@ permalink: /risk_assessment_simple
     resReturn.innerHTML = profile.ret;
     resFluc.innerHTML   = profile.fluc;
     resAdvice.innerHTML = profile.advice;
-    resGoal.innerHTML   = profile.goal;
+    resGoal.innerHTML   = goal;
     result.style.display = "block";
    }
 </script>
