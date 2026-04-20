@@ -12,7 +12,7 @@ permalink: /risk_assessment_simple
     max-width: 520px;
     margin: 40px auto;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  
+  }
   input[type="text"] {
     width: 100%;
     padding: 10px;
@@ -58,6 +58,7 @@ permalink: /risk_assessment_simple
     margin: 8px 0;
   }
 </style>
+<!-- 以上是CSS（样式） -->
 
 <div class="box">
   <h2>Investment Risk Assessment</h2>
@@ -120,16 +121,18 @@ permalink: /risk_assessment_simple
     <p><b>Your Goal:</b> <span id="resGoal"></span></p>
   </div>
 </div>
+<!-- 这一段是我的页面设计（功能键或外观） -->
 
 <script>
   const weights = [0.15, 0.10, 0.35, 0.30, 0.10];
-    function assessInvestmentRisk(answers,weights){
+    function assessInvestmentRisk(answers,weights){   //这是最重要的procedure。answers和weights是parameter（参数），answers是用户输入的value，weights是常数权重。
 
       let score = 0;
       for (let i = 0; i < answers.length; i++) {
         score = score + answers[i] * weights[i];
       }
       score = Math.round(score);
+      //这个循环iteration 用于计算每个用户的score
 
       let level  = "";
       let type   = "";
@@ -137,6 +140,7 @@ permalink: /risk_assessment_simple
       let fluc   = "";
       let advice = "";
       let color  = "";
+      //空字符串---初始化变量
 
       if (score < 20) {
         level = "Low Risk";         type = "Conservative Investor";
@@ -159,6 +163,8 @@ permalink: /risk_assessment_simple
         ret   = "12%+ per year";    fluc = "+/- 15% - 20%";
         advice = "10% bonds, 80% growth stocks, 10% high-risk."; color = "#dc2626";
       }
+      //   题目问conditional/selection statement 就去找if，else if。
+      //   题目问找boolean expression， 就找if后面的条件 而非if本身。(eg.score<20)
       return{
         score:score,
         level:level,
@@ -167,13 +173,16 @@ permalink: /risk_assessment_simple
         fluc:fluc,
         advice:advice,
         color:color,
-      };
+      };// return result. 让程序store the result， after executing the procedure。
     }
-  let testConservative = assessInvestmentRisk([20,20,10,10,10],weights);
-  let testAggresive = assessInvestmentRisk([80,90,90,90,80],weights);
-   function showResult() {
+
+  let testConservative = assessInvestmentRisk([20,20,10,10,10],weights);// (low risk)
+  let testAggresive = assessInvestmentRisk([80,90,90,90,80],weights);// (high risk )
+  // 这两行是testing data.  这两次是测试调用  题目可能会问：two calls to the procedure.
+
+   function showResult() {    //不带parameter的procedure
     let name = inputName.value;
-    let goal = inputGoal.value;
+    let goal = inputGoal.value;   //输入框中将value赋值给前面的变量
 
     let a1 = 0;
     if (q1a.checked) { a1 = 80; }
@@ -203,14 +212,16 @@ permalink: /risk_assessment_simple
     if (q5a.checked) { a5 = 80; }
     else if (q5b.checked) { a5 = 40; }
     else if (q5c.checked) { a5 = 10; }
+  //  这一段是用户的输入----checkValidate.
 
     if (name == "" || goal == "" || a1 == 0 || a2 == 0 || a3 == 0 || a4 == 0 || a5 == 0) {
       alert("Please fill in all fields and answer all questions.");
       return;
     }
+    // 另一个 if 判断，同时也是我们自己的校验（validate check）
 
-    let answers = [a1, a2, a3, a4, a5];
-    let profile = assessInvestmentRisk(answers,weights);
+    let answers = [a1, a2, a3, a4, a5];   //唯一的可变的list
+    let profile = assessInvestmentRisk(answers,weights); //每次根据用户输入的真实调用。
     resTitle.innerHTML  = name + "'s Result";
     resBadge.innerHTML  = profile.level;
     resBadge.style.backgroundColor = profile.color;
@@ -220,5 +231,5 @@ permalink: /risk_assessment_simple
     resAdvice.innerHTML = profile.advice;
     resGoal.innerHTML   = goal;
     result.style.display = "block";
-   }
+   }//这一段是我的输出，包括你是什么类型的投资者，expected return, Annual Fluctuation, Suggestion, your goal.
 </script>

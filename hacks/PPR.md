@@ -12,7 +12,7 @@ permalink: /risk_assessment_simple
     max-width: 520px;
     margin: 40px auto;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  
+  }
   input[type="text"] {
     width: 100%;
     padding: 10px;
